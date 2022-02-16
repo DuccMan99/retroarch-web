@@ -3,7 +3,13 @@
  *
  * This provides the basic styling for the RetroArch web player.
  */
-
+ body{overflow: hidden;padding: 0px;margin: 0px;background-color: #000;}
+.patreon{display: inline-block;}
+.patreon a{padding: 0px;margin: 0px;}
+.patreon img{
+  height: 55px;
+  max-width: 100%;
+}
 /**
  * Make sure the background of the player is black.
  * Also make sure line height is 0 so there's no extra space on the bottom.
@@ -11,6 +17,7 @@
 .webplayer-container {
   background-color: black;
   line-height: 0;
+  position: relative;
 }
 
 /**
@@ -110,6 +117,7 @@ textarea {
    position: absolute;
    right: 0;
    cursor: pointer;
+   z-index: 9999999;
 }
 #icnShowMenu {
    color: #565656 !important;
@@ -118,3 +126,153 @@ textarea {
 .navbar {
   box-shadow: none;
 }
+
+.game-ctrl{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+}
+.vk {
+  position: absolute;
+  text-align: center;
+  overflow: hidden;
+  font-size: 2.1875rem;
+  color: #FFF;
+  z-index: 10003;
+  vertical-align: middle;
+  border: 1px #fff solid;
+  border-radius: 25%;
+  line-height: 150%;
+  touch-action: none;
+  opacity: 0.5;
+}
+
+.vk.active {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.vk[data-k=l] {
+  left: 15px;
+  top: calc(100% * 0.5 - 150px);
+  padding: 2px 8px;
+  width: 50px;
+  font-size: 1.5rem;
+}
+
+.vk[data-k=r] {
+  right: 15px;
+  top: calc(100% * 0.5 - 150px);
+  padding: 2px 8px;
+  width: 50px;
+  font-size: 1.5rem;
+}
+
+.vk[data-k=select] {
+  bottom: max(100% * 0.5 - 150px, 70px);
+  left: 60px;
+  padding: 0px;
+  width: 60px;
+  font-size: 1rem;
+}
+
+.vk[data-k=start] {
+  bottom: max(100% * 0.5 - 150px, 70px);
+  right: 60px;
+  padding: 0px;
+  width: 60px;
+  font-size: 1rem;
+}
+
+.vk[data-k=up],
+.vk[data-k=down],
+.vk[data-k=left],
+.vk[data-k=right] {
+  width: 50px;
+  height: 50px;
+}
+
+.vk[data-k=dl],
+.vk[data-k=dr],
+.vk[data-k=ul],
+.vk[data-k=ur] {
+  width: 30px;
+  height: 30px;
+  background: transparent !important;
+
+}
+
+.vk[data-k=up] {
+  left: 55px;
+  top: calc(100% * 0.5 - 75px);
+}
+
+.vk[data-k=down] {
+  top: calc(100% * 0.5 + 25px);
+  left: 55px;
+}
+
+.vk[data-k=left] {
+  top: calc(100% * 0.5 - 25px);
+  left: 5px;
+}
+
+.vk[data-k=right] {
+  top: calc(100% * 0.5 - 25px);
+  left: 105px;
+}
+
+.vk[data-k=dl] {
+  left: 5px;
+  top: calc(100% * 0.5 + 45px);
+  border-color: transparent;
+}
+
+.vk[data-k=dr] {
+  left: 125px;
+  top: calc(100% * 0.5 + 45px);
+  border-color: transparent;
+}
+
+.vk[data-k=ul] {
+  top: calc(100% * 0.5 - 75px);
+  border-color: transparent;
+  left: 5px;
+}
+
+.vk[data-k=ur] {
+  top: calc(100% * 0.5 - 75px);
+  left: 125px;
+  border-color: transparent;
+}
+
+.vk[data-k=b],
+.vk[data-k=a] {
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  border-radius: 50%;
+}
+
+.vk[data-k=a] {
+  top: calc(100% * 0.5 - 50px);
+  right: 15px;
+
+}
+
+.vk[data-k=b] {
+  top: calc(100% * 0.5 - 25px);
+  right: 100px;
+
+}
+/*
+@media screen and (orientation: portrait){
+  .game-ctrl{
+      height: calc(100vh - 100vw / 1.5);
+      top:calc(100vw / 1.5);
+  }
+  
+}
+*/
